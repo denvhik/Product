@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Frontend.Models.Product>
+
+
+
+<h4>Product List</h4>
+
+<form>
+    <button asp-controller="Product" asp-action="GetProduct" formmethod="get" class="btn btn-primary" style="margin-bottom:10px">Create</button>
+    <table>
+        <thead>
+            <tr class="table-">
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Group.GroupName)
+                </th> 
+                <th>
+                    @Html.DisplayNameFor(model => model.Group.Category.CategoryName)
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        
+                       <td>@product.ProductName</td>
+                       <td>@product.Group.GroupName</td>
+                       <td>@product.Group.Category.CategoryName</td>
+                        <td>
+                           
+                            <button type="submit" name="Id" value="@product.ProductId" class="btn btn-danger"
+                                    formaction="/DeleteProduct" formmethod="post">
+                                Delete
+                            </button>
+
+                            <button type="submit" formaction="/EditProduct/@product.ProductId"  formmethod="get" class="btn btn-info green-button" >Edit</button>
+                        </td>
+
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5">
+                        <div>No product at this moment!</div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</form>
+<script>
+    $('#Id').on('click', function () {
+        var productId = $(this).data('product-id');
+
+        $.ajax({
+            url: '/DeleteProduct', 
+            type: "POST",
+            data: { Id: productId },
+            success: function () {
+             
+            },
+            error: function (error) {
+                console.error('Error deleting product:', error);
+            }
+        });
+    });
+
+</script>

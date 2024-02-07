@@ -1,0 +1,62 @@
+﻿@model Frontend.Models.Group
+
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"
+        asp-fallback-src="~/lib/jquery-validation/dist/jquery.validate.min.js"
+        asp-fallback-test="window.jQuery && window.jQuery.validator">
+</script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.10/jquery.validate.unobtrusive.min.js"
+        asp-fallback-src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+        asp-fallback-test="window.jQuery && window.jQuery.validator && window.jQuery.validator.unobtrusive">
+</script>
+<script src="~/js/Scripts/CreateEditGroup.js"></script>
+
+<form onSubmit="return ValidateGroup(event, this); " method="post" action="/Group/CreateGroup">
+<div class="modal fade"  id="createEdit-info-modal" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+                <input type="hidden" asp-for="@Model.GroupId"/>
+            <div class="modal-header">
+                @{
+                    var nameOfTittle = Model != null ? "Редагування групи" : "Cтворення групи";
+                }
+                <h4 class="modal-title">@nameOfTittle</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              
+                <div class="container">
+                    <div class="form-control ">
+                        <div class="row">
+                            <div class="col-3">
+                                <label asp-for="Category" class="col-form-label"></label>
+                            </div>
+                            <div class="col-8">
+                                <select style="width:190px;" class="form-control" asp-for="@Model.Category" name="CategoryId">
+                                </select>
+                                <span asp-validation-for="@Model.Category"></span>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-3">
+                                <label asp-for="@Model.GroupName" class="col-form-label"></label>
+                            </div>
+                            <div class="col-8">
+                                <input asp-for="@Model.GroupName"/>
+                               @* <div class="col-11">
+                                <span asp-validation-for="@Model.GroupName" class="text-danger"></span>
+                               </div> *@
+                                   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit"  class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>

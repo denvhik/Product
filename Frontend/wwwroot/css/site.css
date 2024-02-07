@@ -1,0 +1,144 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+
+<style >
+.btn-create {
+    margin-bottom: 20px;
+    margin-top: 30px
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f8f9fa;
+}
+
+.btn-action {
+    margin-right: 5px;
+}
+
+.green-button {
+    background-color: seagreen;
+    color: white;
+}
+
+    .green-button:hover {
+        background-color: mediumseagreen;
+        color: white;
+    }
+
+</style >
+/* Додайте це в ваш стиль або CSS-файл */
+/* Загальні стилі для всього сайту */
+body {
+    font-family: 'Arial', sans-serif; /* Змініть на ваш вибір шрифту */
+}
+
+/* Стилі для навігаційного меню */
+.navbar {
+    background-color: #3498db; /* Змініть на ваш вибір кольору */
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: black !important;
+}
+
+
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+
+.container {
+    margin-top: 20px;
+}
+
+
+.footer {
+    padding: 10px 0;
+    background-color: #f8f9fa;
+}
+
+    .footer a {
+        color: #6c757d;
+    }
+
+
+.text-muted {
+    color: #636c72;
+}
+
+
+.btn-primary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+    .btn-primary:hover {
+        background-color: #218838;
+    }
+
+/* Add this style to your existing stylesheet or create a new one */
+/* Add this style to your existing stylesheet or create a new one */
+
+
+.select2-container--open {
+    z-index: 9999999
+}
+
+<style >
+/* Додайте ці стилі в ваш файл стилів або включіть їх в розмітку */
+.modal-content {
+    background-color: aquamarine; /* Змініть колір фону за потребою */
+}
+
+.modal-title {
+    color: black; /* Змініть колір заголовку за потребою */
+}
+
+.form-control {
+    margin-bottom: 10px; /* Змініть відступ за потребою */
+}
+
+.form-select {
+    width: 100%; /* Змініть ширину за потребою */
+}
+
+.btn-close {
+    color: #007bff; /* Змініть колір кнопки закриття за потребою */
+}
+
+</style >
